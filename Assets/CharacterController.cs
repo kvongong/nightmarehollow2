@@ -15,10 +15,13 @@ public class CharacterController : MonoBehaviour
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
-    public float jumpForce = 5.0f;
+    public float jumpForce = 10.0f;
+
+    Animator myAnim;
 
       void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
         cam= GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,6 +35,7 @@ public class CharacterController : MonoBehaviour
             myRigidbody.AddForce(transform.up * jumpForce);
         }
          Vector3 newVelocity = (transform.forward * Input.GetAxis("Vertical") * maxSpeed) + (transform.right * Input.GetAxis("Horizontal") * maxSpeed);
+         myAnim.SetFloat("speed", newVelocity.magnitude);
         myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
 
         rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
