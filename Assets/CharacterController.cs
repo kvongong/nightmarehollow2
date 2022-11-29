@@ -30,8 +30,10 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         isOnGround  = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
+        myAnim.SetBool("isOnGround", isOnGround);
         if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         {
+            myAnim.SetTrigger("jumped");
             myRigidbody.AddForce(transform.up * jumpForce);
         }
          Vector3 newVelocity = (transform.forward * Input.GetAxis("Vertical") * maxSpeed) + (transform.right * Input.GetAxis("Horizontal") * maxSpeed);
