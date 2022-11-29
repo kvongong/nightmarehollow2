@@ -2689,7 +2689,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 150
+  jumpForce: 125
 --- !u!54 &1034729475
 Rigidbody:
   m_ObjectHideFlags: 0
