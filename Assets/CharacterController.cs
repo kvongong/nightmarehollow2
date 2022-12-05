@@ -54,5 +54,6 @@ public class CharacterController : MonoBehaviour
         camRotation = Mathf.Clamp(camRotation, -40.0f, 40.0f);
 
         cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 0.0f, 0.0f));
+
     }
 }
