@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SkyboxHandPainted/DemoScene2.unity
+    guid: 300e5b887e4ce93429628d6e90f1976b
   m_configObjects: {}
